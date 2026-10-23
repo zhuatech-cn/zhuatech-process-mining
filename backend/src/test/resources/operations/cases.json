@@ -1,0 +1,48 @@
+[
+  {
+    "patch": {},
+    "expected": {
+      "decision": "PASS",
+      "otherHours": "#2",
+      "candidateCycleHours": "#8",
+      "monthlyWaitingHoursAvoided": "#2000"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "waitingHours": "8"
+    },
+    "expected": {},
+    "error": true
+  },
+  {
+    "patch": {
+      "reducibleWaitingPct": "100"
+    },
+    "expected": {
+      "candidateCycleHours": "#5"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "reducibleWaitingPct": "0"
+    },
+    "expected": {
+      "monthlyWaitingHoursAvoided": "#0"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "cycleHours": "0",
+      "processingHours": "0",
+      "waitingHours": "0"
+    },
+    "expected": {
+      "decision": "REVIEW"
+    },
+    "error": false
+  }
+]
